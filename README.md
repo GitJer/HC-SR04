@@ -42,7 +42,7 @@ This same approach can be used to create a clock-cycle precise delay for any num
 The second delay that is needed is 60 ms. The same trick as above is used to create this delay. But now with the following values:
 7500000 clock cycles are needed. In binary this is 11100100111000011100000. This is rounded down to 11100 + 18 * 0.
 
-# Measuring duration of a pulse
+## Measuring duration of a pulse
 
 To measure the duration of some event, in this case the length of the Echo pulse which represents the distance to an object, can be done by starting the x (or y) scratch register with 0xFFFFFFFF and counting down, testing for the stop criterion each iteration. Getting 0xFFFFFFFF into x can be done with:
 ```pio
