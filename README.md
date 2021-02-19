@@ -2,6 +2,8 @@
 
 The HC-SR04 is an ultrasonic distance measurement unit ([datasheet](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf)). Basically, it works by sending a puls to the Trig pin, and measuring the pulse on the Echo pin. The length of the Echo pulse represents the distance to an object in front of the device.
 
+The HC-SR04 uses 5V while the Pico uses 3V3. Thus the Echo pin requires a [resistive divider](https://hackaday.com/2016/12/05/taking-it-to-another-level-making-3-3v-and-5v-logic-communicate-with-level-shifters/) to be save. 
+
 ## The algorithm
 The pio code to read the HC-SR04 has the following steps:
 * Give a pulse on the Trig pin of the HC-SR04 to start the measurement. The datasheet indicates that the length of this pulse should be 10 us
