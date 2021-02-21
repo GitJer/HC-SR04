@@ -24,14 +24,14 @@ According to the datasheet, the trigger pulse should be 10 us. The pio clock run
 * 1250 cycles in binary is 10011100010
 * assuming the pulse width doesn't need to be very precise, this can be rounded down to 10011000000
 * this can be split into the 5 most significant digits (10011) and 6 trailing 0
-* place this number in the x register in the following way:
+* place this number in the x register in the following way (note that for this to work correctly, the shift direction needs to be set with`sm_config_set_in_shift(&c, false, false, 0);`):
 ``` pio
     in NULL 32      ; clear the ISR
     set x 19        ; set x to 10011
     in x 5          ; shift x into the ISR  
     in NULL 6       ; shift in 6 more 0 bits
     mov x ISR       ; move the ISR to x (which now contains 10011000000)
-```
+``` 
 * Count down to 0 in a tight loop using:
 ``` pio
 delay1:
