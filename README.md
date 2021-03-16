@@ -1,3 +1,9 @@
+# This repository is updated and moved to [here](https://github.com/GitJer/Some_RPI-Pico_stuff/tree/main/HCSR04)
+
+Please use the new repository!
+
+OLD TEXT:
+
 # HC-SR04 using the Raspberry Pi Pico PIO 
 
 The HC-SR04 is an ultrasonic distance measurement unit ([datasheet](https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf)). Basically, it works by sending a puls to the Trig pin, and measuring the pulse on the Echo pin. The length of the Echo pulse represents the distance to an object in front of the device.
